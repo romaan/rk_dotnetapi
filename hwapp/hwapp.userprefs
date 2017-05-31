@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{9105BC13-F92F-4D9C-9283-9598E7FB7342}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+    <Files>
+      <File FileName="Program.cs" Line="9" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/romaan/workspacepy/mydot/hwapp/Program.cs" relfile="Program.cs" line="9" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.hwapp PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

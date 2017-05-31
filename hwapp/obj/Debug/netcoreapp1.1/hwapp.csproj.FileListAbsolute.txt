@@ -1,0 +1,10 @@
+/Users/romaan/workspacepy/mydot/hwapp/bin/Debug/netcoreapp1.1/hwapp.deps.json
+/Users/romaan/workspacepy/mydot/hwapp/bin/Debug/netcoreapp1.1/hwapp.runtimeconfig.json
+/Users/romaan/workspacepy/mydot/hwapp/bin/Debug/netcoreapp1.1/hwapp.runtimeconfig.dev.json
+/Users/romaan/workspacepy/mydot/hwapp/bin/Debug/netcoreapp1.1/hwapp.dll
+/Users/romaan/workspacepy/mydot/hwapp/bin/Debug/netcoreapp1.1/hwapp.pdb
+/Users/romaan/workspacepy/mydot/hwapp/obj/Debug/netcoreapp1.1/hwapp.AssemblyInfo.cs
+/Users/romaan/workspacepy/mydot/hwapp/obj/Debug/netcoreapp1.1/hwapp.dll
+/Users/romaan/workspacepy/mydot/hwapp/obj/Debug/netcoreapp1.1/hwapp.pdb
+/Users/romaan/workspacepy/mydot/hwapp/obj/Debug/netcoreapp1.1/hwapp.csprojResolveAssemblyReference.cache
+/Users/romaan/workspacepy/mydot/hwapp/obj/Debug/netcoreapp1.1/hwapp.csproj.CoreCompileInputs.cache

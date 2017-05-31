@@ -1,0 +1,10 @@
+/Users/romaan/workspacepy/mydot/mymvc/bin/Debug/netcoreapp1.1/mymvc.deps.json
+/Users/romaan/workspacepy/mydot/mymvc/bin/Debug/netcoreapp1.1/mymvc.runtimeconfig.json
+/Users/romaan/workspacepy/mydot/mymvc/bin/Debug/netcoreapp1.1/mymvc.runtimeconfig.dev.json
+/Users/romaan/workspacepy/mydot/mymvc/bin/Debug/netcoreapp1.1/mymvc.dll
+/Users/romaan/workspacepy/mydot/mymvc/bin/Debug/netcoreapp1.1/mymvc.pdb
+/Users/romaan/workspacepy/mydot/mymvc/obj/Debug/netcoreapp1.1/mymvc.csprojResolveAssemblyReference.cache
+/Users/romaan/workspacepy/mydot/mymvc/obj/Debug/netcoreapp1.1/mymvc.csproj.CoreCompileInputs.cache
+/Users/romaan/workspacepy/mydot/mymvc/obj/Debug/netcoreapp1.1/mymvc.AssemblyInfo.cs
+/Users/romaan/workspacepy/mydot/mymvc/obj/Debug/netcoreapp1.1/mymvc.dll
+/Users/romaan/workspacepy/mydot/mymvc/obj/Debug/netcoreapp1.1/mymvc.pdb
