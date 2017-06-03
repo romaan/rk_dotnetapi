@@ -72,8 +72,17 @@ namespace SimpleAPI.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var todo = _apiContext.TodoItems.FirstOrDefault(t => t.Id == id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            _apiContext.TodoItems.Remove(todo);
+            _apiContext.SaveChanges();
+            return new NoContentResult();
         }
     }
 }
