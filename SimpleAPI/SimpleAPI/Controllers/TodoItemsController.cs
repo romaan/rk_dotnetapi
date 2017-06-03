@@ -48,8 +48,26 @@ namespace SimpleAPI.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody]TodoItem todoItem)
         {
+            if (todoItem == null || todoItem.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var todo = _apiContext.TodoItems.FirstOrDefault(t => t.Id == id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            todo.IsDone = todoItem.IsDone;
+            todo.Title = todoItem.Title;
+            todo.Description = todoItem.Description;
+
+            _apiContext.TodoItems.Update(todo);
+            _apiContext.SaveChanges();
+            return new NoContentResult();
         }
 
         // DELETE api/values/5
