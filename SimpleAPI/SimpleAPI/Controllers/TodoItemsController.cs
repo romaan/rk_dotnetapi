@@ -33,10 +33,17 @@ namespace SimpleAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]TodoItem todoItem)
+        public IActionResult Post([FromBody]TodoItem todoItem)
         {
             _apiContext.TodoItems.Add(todoItem);
-            _apiContext.SaveChanges();
+            try
+            {
+                _apiContext.SaveChanges();
+            } catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            return new CreatedAtRouteResult(new { Id = todoItem.Id }, todoItem);
         }
 
         // PUT api/values/5
