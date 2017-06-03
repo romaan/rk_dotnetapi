@@ -17,21 +17,21 @@ namespace SimpleAPI.Controllers
             _apiContext = apiContext;
         }
 
-        // GET api/values
+        // GET api/todoitems
         [HttpGet]
         public TodoItem[] Get()
         {
             return _apiContext.TodoItems.ToArray();
         }
 
-        // GET api/values/5
+        // GET api/todoitems/5
         [HttpGet("{id}")]
         public TodoItem Get(int id)
         {
             return _apiContext.TodoItems.Where(data => data.Id == id).First();
         }
 
-        // POST api/values
+        // POST api/todoitems
         [HttpPost]
         public IActionResult Post([FromBody]TodoItem todoItem)
         {
@@ -46,7 +46,7 @@ namespace SimpleAPI.Controllers
             return new CreatedAtRouteResult(new { Id = todoItem.Id }, todoItem);
         }
 
-        // PUT api/values/5
+        // PUT api/todoitems/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody]TodoItem todoItem)
         {
@@ -94,7 +94,7 @@ namespace SimpleAPI.Controllers
             return new NoContentResult(); 
         }
 
-        // DELETE api/values/5
+        // DELETE api/todoitems/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
