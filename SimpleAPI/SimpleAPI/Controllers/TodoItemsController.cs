@@ -69,6 +69,30 @@ namespace SimpleAPI.Controllers
             _apiContext.SaveChanges();
             return new NoContentResult();
         }
+        // PATCH api/todoitems/:id
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, [FromBody]TodoItem todoItem)
+        {
+            if (todoItem == null || todoItem.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var todo = _apiContext.TodoItems.FirstOrDefault(t => t.Id == id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            todo.IsDone = todoItem.IsDone ?? todo.IsDone;
+            todo.Title = todoItem.Title ?? todo.Title;
+            todo.Description = todoItem.Description ?? todo.Description;
+
+            _apiContext.TodoItems.Update(todo);
+            _apiContext.SaveChanges();
+
+            return new NoContentResult(); 
+        }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
