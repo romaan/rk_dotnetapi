@@ -10,7 +10,11 @@ namespace SimpleAPI
 		{
 		}
 
-		public DbSet<TodoItem> TodoItems { get; set; }
+        public ApiContext() :base()
+        {
+
+        }
+		public virtual DbSet<TodoItem> TodoItems { get; set; }
 
 	}
 }

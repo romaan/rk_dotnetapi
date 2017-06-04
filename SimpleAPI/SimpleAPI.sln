@@ -1,7 +1,10 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAPI", "SimpleAPI\SimpleAPI.csproj", "{7A9A73DD-C7C0-412E-987F-2926399502F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApiTest", "SimpleApiTest\SimpleApiTest.csproj", "{7B728A45-786C-451A-BF46-795CB3E5EDD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +16,12 @@ Global
 		{7A9A73DD-C7C0-412E-987F-2926399502F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A9A73DD-C7C0-412E-987F-2926399502F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A9A73DD-C7C0-412E-987F-2926399502F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B728A45-786C-451A-BF46-795CB3E5EDD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B728A45-786C-451A-BF46-795CB3E5EDD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B728A45-786C-451A-BF46-795CB3E5EDD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B728A45-786C-451A-BF46-795CB3E5EDD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
