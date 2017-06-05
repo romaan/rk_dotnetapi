@@ -164,7 +164,7 @@ namespace SimpleApiTest
             mockApiContext.Setup(m => m.TodoItems).Returns(mockToDoItems.Object);
 
             var controller = new TodoItemsController(mockApiContext.Object);
-            StatusCodeResult result = (StatusCodeResult)controller.Patch(1, new TodoItem() { IsDone = true});
+            StatusCodeResult result = (StatusCodeResult)controller.Patch(1, new TodoItem() { Id = 1, IsDone = true});
             Assert.AreEqual(204, result.StatusCode);
 
         }
@@ -238,6 +238,101 @@ namespace SimpleApiTest
             Assert.AreEqual(404, result.StatusCode);
         }
 
+        [TestMethod]
+        public void Get_All_NoDataInList_Return_200()
+        {
+            var mockApiContext = new Mock<ApiContext>();
+            var mockToDoItems = new Mock<DbSet<TodoItem>>();
+            var items = new List<TodoItem>
+            {
+            }.AsQueryable();
 
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Provider).Returns(items.Provider);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Expression).Returns(items.Expression);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.ElementType).Returns(items.ElementType);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.GetEnumerator()).Returns(items.GetEnumerator());
+
+            mockApiContext.Setup(m => m.TodoItems).Returns(mockToDoItems.Object);
+
+            var controller = new TodoItemsController(mockApiContext.Object);
+            ObjectResult result = (ObjectResult)controller.Get();
+
+            Assert.AreEqual(200, result.StatusCode);
+        }
+
+        [TestMethod]
+        public void Get_All_DataInList_Return_200()
+        {
+            var mockApiContext = new Mock<ApiContext>();
+            var mockToDoItems = new Mock<DbSet<TodoItem>>();
+            var items = new List<TodoItem>
+            {
+                new TodoItem () {Id = 1}, 
+                new TodoItem () {Id = 2}
+            }.AsQueryable();
+
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Provider).Returns(items.Provider);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Expression).Returns(items.Expression);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.ElementType).Returns(items.ElementType);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.GetEnumerator()).Returns(items.GetEnumerator());
+
+            mockApiContext.Setup(m => m.TodoItems).Returns(mockToDoItems.Object);
+
+            var controller = new TodoItemsController(mockApiContext.Object);
+            ObjectResult result = (ObjectResult)controller.Get();
+
+            Assert.AreEqual(200, result.StatusCode);
+            Assert.AreEqual(items.Count(), ((List<TodoItem>)result.Value).Count);
+        }
+
+
+        [TestMethod]
+        public void Get_Record_Found_Return_200()
+        {
+            var mockApiContext = new Mock<ApiContext>();
+            var mockToDoItems = new Mock<DbSet<TodoItem>>();
+            var items = new List<TodoItem>
+            {
+                new TodoItem () {Id = 1},
+                new TodoItem () {Id = 2}
+            }.AsQueryable();
+
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Provider).Returns(items.Provider);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Expression).Returns(items.Expression);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.ElementType).Returns(items.ElementType);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.GetEnumerator()).Returns(items.GetEnumerator());
+
+            mockApiContext.Setup(m => m.TodoItems).Returns(mockToDoItems.Object);
+
+            var controller = new TodoItemsController(mockApiContext.Object);
+            ObjectResult result = (ObjectResult)controller.Get(1);
+
+            Assert.AreEqual(200, result.StatusCode);
+        }
+
+
+        [TestMethod]
+        public void Get_Record_Not_Found_Return_404()
+        {
+            var mockApiContext = new Mock<ApiContext>();
+            var mockToDoItems = new Mock<DbSet<TodoItem>>();
+            var items = new List<TodoItem>
+            {
+                new TodoItem () {Id = 1},
+                new TodoItem () {Id = 2}
+            }.AsQueryable();
+
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Provider).Returns(items.Provider);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.Expression).Returns(items.Expression);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.ElementType).Returns(items.ElementType);
+            mockToDoItems.As<IQueryable<TodoItem>>().Setup(m => m.GetEnumerator()).Returns(items.GetEnumerator());
+
+            mockApiContext.Setup(m => m.TodoItems).Returns(mockToDoItems.Object);
+
+            var controller = new TodoItemsController(mockApiContext.Object);
+            StatusCodeResult result = (StatusCodeResult)controller.Get(5);
+
+            Assert.AreEqual(404, result.StatusCode);
+        }
     }
 }

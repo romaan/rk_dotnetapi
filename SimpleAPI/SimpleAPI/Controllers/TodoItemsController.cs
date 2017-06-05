@@ -19,9 +19,9 @@ namespace SimpleAPI.Controllers
 
         // GET api/todoitems
         [HttpGet]
-        public List<TodoItem> Get()
+        public IActionResult Get()
         {
-            return _apiContext.TodoItems.ToList();
+            return Ok(_apiContext.TodoItems.ToList());
         }
 
         // GET api/todoitems/5
