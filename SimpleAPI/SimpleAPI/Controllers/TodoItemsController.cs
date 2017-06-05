@@ -35,7 +35,12 @@ namespace SimpleAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody]TodoItem todoItem)
         {
-            _apiContext.TodoItems.Add(todoItem);
+            if (todoItem == null )
+            {
+                return BadRequest();
+            }
+
+            _apiContext.TodoItems.Add(todoItem);    
             try
             {
                 _apiContext.SaveChanges();
